@@ -1,0 +1,142 @@
+@import "helpers/placeholders";
+@import "helpers/text_variables";
+@import "helpers/variables";
+
+
+@for $i from 1 through $resume-sec-num{	
+	.symbol:nth-child(#{-1+2*$i}){
+		top: (1-$i)*$resume-sec-block;
+	}
+	.details:nth-child(#{2*$i}){
+		top: (1-$i)*($resume-sec-block)-($resume-sec-block); 
+	}
+}
+
+.container{
+	position: relative;
+	top: 0px;
+	max-width: 1170px;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+	top: 0px;	
+}
+
+.header{
+	min-height: 70px;
+	background-color: black;
+	padding-top: 15px;
+	ul {
+		position: absolute;
+		display: inline-block;
+		/*border: 2px dashed red;*/
+		margin: auto;
+	}
+	li{
+		display: inline-block;
+		margin-right: 20px;
+		color: white;	
+	}
+	img{
+		height: 50px;
+		width: 50px;
+		display: inline-block;
+		float: right;
+		margin: auto;
+		clear: both;
+	}
+}
+
+.head-tile {
+	background: url("images/mountin_sunset_downsize.jpg") no-repeat center center fixed; /*#1A679D;*/	
+	background-size: cover;
+	margin: auto;
+	margin-bottom: 0px;	
+	padding: 100px 0px;
+	text-align: center;
+	.container{
+		margin-bottom: opx;
+	}
+	h1{
+		color: white;
+		margin-bottom: 80px;
+		font-size: 70px;
+	}
+	p {
+		position: absolute;
+		bottom: -80px;
+		color: white;
+	}
+	img{
+		&:hover{
+			box-shadow: 5px 5px 20px orange;
+		}
+	}
+}
+
+.nutshell-text:before{
+	content: $nut-shell_text;
+	@extend %content-format;
+}
+
+.resume-sec{
+	height: $resume-sec-block*$resume-sec-num;
+	overflow: hidden;
+}
+
+.symbol {	
+	@extend %flipper;
+	height: $resume-sec-height;
+	margin-top: $resume-sec-top-margin;
+	z-index: 2;	
+	img{
+		position: relative;
+		top: 20%;
+		margin: auto;
+		display: block;
+	}
+	h2{
+		position: relative;
+		top: 20%;
+		display:block;
+	}
+	.endyear{
+		position: absolute;
+		left: 10px;
+		top: 20px;
+		color: red;
+	}
+	.startyear{
+		position: absolute;
+		left: 10px;
+		bottom: 20px;
+		color: green;
+	}
+	&:hover{
+		opacity: 0;
+	}
+}
+
+
+
+.details {	
+	@extend %flipper;
+	height: $resume-sec-height;
+	margin-top: $resume-sec-top-margin;
+	z-index: 1;	
+}
+
+
+.footer {
+	margin-top: 40px;
+	background-color: black;
+	padding: 40px 0px;
+	color: white;
+	p{
+		display: inline-block;
+	}
+	a{
+		float: right;
+		display: inline-block;
+	}
+}
