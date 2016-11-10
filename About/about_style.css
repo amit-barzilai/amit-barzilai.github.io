@@ -71,7 +71,7 @@
     clear: both; }
 
 .head-tile {
-  background: url("images/mountin_sunset_downsize.jpg") no-repeat center center fixed;
+  background: url("../images/mountin_sunset_downsize.jpg") no-repeat center center fixed;
   /*#1A679D;*/
   background-size: cover;
   margin: auto;
